@@ -1,5 +1,5 @@
 # 🔤 Jogo de Adivinhação de Palavras 
-### Link do jogo
+### https://devdiogoamorim-guesstheword.netlify.app/
 
 ### 🚀 Tecnologias utilizadas:
 
@@ -14,3 +14,4 @@
 - Se errar muitas vezes… cuidado! Você pode perder o jogo!
 <br>
 <img src="https://github.com/user-attachments/assets/84d50ff4-dc38-4be3-8913-86a3d64f756f" />
+

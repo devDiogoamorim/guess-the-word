@@ -24,3 +24,18 @@
 .icon {
   height: 2rem;
 }
+
+@media (max-width: 35rem) {
+  .tip {
+    padding: 0.8rem;
+  }
+  .tip h3 {
+    font-size: 1.1rem;
+  }
+  .tip p {
+    font-size: 0.9rem;
+  }
+  .icon {
+    height: 1.7rem;
+  }
+}

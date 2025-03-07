@@ -40,3 +40,18 @@
   font-size: 1.37rem;
   color: #e8891C;
 }
+
+@media (max-width: 30rem) {
+  .container > img {
+    height: 3.5rem;
+  }
+  .container > header img {
+    height: 1.8rem;
+  }
+  .container > header span {
+    font-size: 1.1rem;
+  }
+  .container > header span strong {
+    font-size: 1.25rem;
+  }
+}

@@ -36,3 +36,10 @@
   border: 2px solid #691b0a;
   color: #691b0a;
 }
+
+@media (max-width: 35rem) {
+  .letter, .letterSmall {
+    width: 2.87rem;
+    height: 2.87rem;
+  }
+}

@@ -1,6 +1,8 @@
 import styles from "./app.module.css"
 import { useEffect, useState } from "react";
 import { WORDS, Challenge } from "./utils/words"
+import Confetti from "react-confetti";
+  import {useWindowSize} from "react-use";
 
 import { Header } from "./components/Header";
 import { Tip } from "./components/Tip";
@@ -16,6 +18,9 @@ function App() {
   const [lettersUsed, setLettersUsed] = useState<LetterUsedProps[]>([])
 
   const ATTEMPTS_MARGIN = 5
+
+  const { width, height } = useWindowSize()
+  const [showConfetti, setShowConfetti] = useState(false)
 
   function handleRestartGame() {
     const isConfirmed = window.confirm("Você tem certeza que deseja reiniciar ?")
@@ -80,7 +85,12 @@ function App() {
 
     setTimeout(() => {
       if(score === challenge.word.length) {
-        return endGame("Parabéns, você descobriu a palavra!")
+        setShowConfetti(true)
+
+        setTimeout(() => {
+          setShowConfetti(false)
+          endGame("Parabéns, você descobriu a palavra!")
+      }, 3500)
       }
 
       const attemptLimit = challenge.word.length + ATTEMPTS_MARGIN
@@ -96,6 +106,13 @@ function App() {
 
   return (
     <div className={styles.container}>
+      {showConfetti && 
+      <Confetti 
+      width={width} 
+      height={height} 
+      gravity={0.9} 
+      numberOfPieces={300}
+      />}
       <main>
         <Header current={lettersUsed.length} max={challenge.word.length + ATTEMPTS_MARGIN} onRestart={handleRestartGame}/>
         <Tip tip={challenge.tip}/>
